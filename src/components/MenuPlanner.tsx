@@ -6,14 +6,18 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { 
   Plus, Trash2, Calendar, Users, DollarSign, AlertTriangle, 
-  Sparkles, CheckCircle2, Save, FolderOpen, ArrowRightLeft, 
-  ChefHat, Coffee, Egg, Info, X, Cloud, RefreshCw
+  CheckCircle2, Save, FolderOpen, ArrowRightLeft, 
+  ChefHat, Coffee, Egg, Info, X, Cloud, RefreshCw, Sparkles
 } from 'lucide-react';
 import { Meal, Dish, MenuIngredient, Ingredient, AgeGroup, SavedMenu } from '../types';
 import { calculateDailyRation, checkAgainstStandard } from '../utils/calculator';
 import { NUTRITION_STANDARDS } from '../data/standards';
 import IngredientSelector from './IngredientSelector';
-import { saveMenuToFirebase, deleteMenuFromFirebase, getMenusFromFirebase } from '../lib/firebase';
+import { 
+  saveMenuToFirebase, 
+  deleteMenuFromFirebase, 
+  getMenusFromFirebase
+} from '../lib/firebase';
 
 interface MenuPlannerProps {
   ingredients: Ingredient[];
@@ -58,7 +62,7 @@ export default function MenuPlanner({ ingredients, activeMealState }: MenuPlanne
   const [showLoadModal, setShowLoadModal] = useState(false);
   const [cloudSyncing, setCloudSyncing] = useState(false);
 
-  // Tải danh sách thực đơn đã lưu trong localStorage và đồng bộ từ Google Cloud Firestore lúc khởi động
+  // Tải danh sách thực đơn đã lưu trong localStorage và đồng bộ từ Google Cloud Firestore
   useEffect(() => {
     // 1. Nạp từ localStorage trước cho trải nghiệm nhanh
     const local = localStorage.getItem('HUONG_DUONG_SAVED_MENUS');
@@ -74,11 +78,11 @@ export default function MenuPlanner({ ingredients, activeMealState }: MenuPlanne
     async function syncCloudMenus() {
       try {
         setCloudSyncing(true);
+        // Tải thực đơn lưu trữ của người dùng
         const cloudMenus = await getMenusFromFirebase();
         if (cloudMenus && cloudMenus.length > 0) {
           setSavedMenus(cloudMenus);
           localStorage.setItem('HUONG_DUONG_SAVED_MENUS', JSON.stringify(cloudMenus));
-          console.log("Đã tải thành công danh sách thực đơn từ Google Cloud Database.");
         }
       } catch (err) {
         console.error("Không thể kết nối tải thực đơn từ đám mây:", err);
@@ -88,503 +92,6 @@ export default function MenuPlanner({ ingredients, activeMealState }: MenuPlanne
     }
     syncCloudMenus();
   }, []);
-
-  // Thực đơn mẫu dinh dưỡng mầm non có sẵn (Cập nhật từ thực đơn tuần của nhà trường)
-  const SAMPLE_MENUS: SavedMenu[] = [
-    {
-      id: 'sample_t2',
-      name: 'Thực đơn Mẫu giáo - Thứ Hai (Bánh lọt & Trứng chiên)',
-      ageGroup: 'mau_giao_3_6',
-      childrenCount: 50,
-      budgetPerChild: 30000,
-      updatedAt: '2026-07-13',
-      meals: [
-        {
-          id: 'meal_sáng',
-          name: 'Bữa sáng chính (07:30)',
-          dishes: [
-            {
-              id: 'dish_sáng_t2',
-              name: 'Bánh lọt thịt bằm',
-              ingredients: [
-                { ingredientId: 'tinh_bot_21', quantityPerChild: 80 }, // Bánh lọt tươi
-                { ingredientId: 'thit_thuy_san_22', quantityPerChild: 25 }, // Thịt vai heo băm nhỏ
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 }, // Dầu ăn
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 } // Nước mắm
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_trưa',
-          name: 'Bữa trưa dinh dưỡng (10:30)',
-          dishes: [
-            {
-              id: 'dish_cơm_t2',
-              name: 'Cơm tẻ dẻo mầm non',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 70 } // Gạo tẻ máy
-              ]
-            },
-            {
-              id: 'dish_mặn_t2',
-              name: 'Trứng chiên hành hoa',
-              ingredients: [
-                { ingredientId: 'sua_trung_02', quantityPerChild: 45 }, // Trứng gà (quả vỏ)
-                { ingredientId: 'chat_beo_01', quantityPerChild: 4 }, // Dầu ăn
-                { ingredientId: 'gia_vi_07', quantityPerChild: 2 }, // Hành hoa ta
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 } // Nước mắm
-              ]
-            },
-            {
-              id: 'dish_canh_t2',
-              name: 'Canh rau cải ngọt tép khô',
-              ingredients: [
-                { ingredientId: 'rau_cu_qua_03', quantityPerChild: 40 }, // Rau cải ngọt vườn
-                { ingredientId: 'thit_thuy_san_26', quantityPerChild: 8 }, // Tép khô
-                { ingredientId: 'chat_beo_01', quantityPerChild: 2 }, // Dầu ăn
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 } // Nước mắm
-              ]
-            },
-            {
-              id: 'dish_tráng_miệng_t2',
-              name: 'Tráng miệng: Chuối chín',
-              ingredients: [
-                { ingredientId: 'trai_cay_01', quantityPerChild: 60 } // Chuối tiêu chín ngọt
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_xế_chiều',
-          name: 'Bữa phụ xế chiều (14:30)',
-          dishes: [
-            {
-              id: 'dish_xế_t2',
-              name: 'Cháo thịt heo nạc thơm ngon',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 45 }, // Gạo tẻ máy
-                { ingredientId: 'thit_thuy_san_01', quantityPerChild: 20 }, // Thịt lợn nạc loin
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 }, // Dầu ăn
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 } // Nước mắm
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'sample_t3',
-      name: 'Thực đơn Mẫu giáo - Thứ Ba (Bún thịt & Thịt kho su su)',
-      ageGroup: 'mau_giao_3_6',
-      childrenCount: 50,
-      budgetPerChild: 30000,
-      updatedAt: '2026-07-13',
-      meals: [
-        {
-          id: 'meal_sáng',
-          name: 'Bữa sáng chính (07:30)',
-          dishes: [
-            {
-              id: 'dish_sáng_t3',
-              name: 'Bún thịt bằm ấm nóng',
-              ingredients: [
-                { ingredientId: 'tinh_bot_07', quantityPerChild: 90 }, // Bún tươi
-                { ingredientId: 'thit_thuy_san_22', quantityPerChild: 25 }, // Thịt vai heo băm nhỏ
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 }, // Dầu ăn
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 } // Nước mắm
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_trưa',
-          name: 'Bữa trưa dinh dưỡng (10:30)',
-          dishes: [
-            {
-              id: 'dish_cơm_t3',
-              name: 'Cơm tẻ dẻo mầm non',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 70 }
-              ]
-            },
-            {
-              id: 'dish_mặn_t3',
-              name: 'Thịt kho su su tàu hủ',
-              ingredients: [
-                { ingredientId: 'thit_thuy_san_02', quantityPerChild: 35 }, // Thịt lợn nửa nạc nửa mỡ
-                { ingredientId: 'rau_cu_qua_17', quantityPerChild: 20 }, // Su su
-                { ingredientId: 'thit_thuy_san_20', quantityPerChild: 20 }, // Đậu phụ / Tàu hủ
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 2 }
-              ]
-            },
-            {
-              id: 'dish_canh_t3',
-              name: 'Canh bí đỏ thịt gà',
-              ingredients: [
-                { ingredientId: 'rau_cu_qua_05', quantityPerChild: 40 }, // Bí đỏ ta
-                { ingredientId: 'thit_thuy_san_06', quantityPerChild: 15 }, // Thịt gà nạc
-                { ingredientId: 'chat_beo_01', quantityPerChild: 2 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            },
-            {
-              id: 'dish_tráng_miệng_t3',
-              name: 'Tráng miệng: Dưa hấu ngọt',
-              ingredients: [
-                { ingredientId: 'trai_cay_04', quantityPerChild: 70 } // Dưa hấu đỏ ngọt nước
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_xế_chiều',
-          name: 'Bữa phụ xế chiều (14:30)',
-          dishes: [
-            {
-              id: 'dish_xế_t3',
-              name: 'Mì gói thịt bằm',
-              ingredients: [
-                { ingredientId: 'tinh_bot_10', quantityPerChild: 40 }, // Mì tôm ăn liền
-                { ingredientId: 'thit_thuy_san_22', quantityPerChild: 15 }, // Thịt vai heo băm
-                { ingredientId: 'rau_cu_qua_03', quantityPerChild: 15 }, // Cải ngọt
-                { ingredientId: 'chat_beo_01', quantityPerChild: 2 }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'sample_t4',
-      name: 'Thực đơn Mẫu giáo - Thứ Tư (Mì tươi & Cá sốt cà chua)',
-      ageGroup: 'mau_giao_3_6',
-      childrenCount: 50,
-      budgetPerChild: 30000,
-      updatedAt: '2026-07-13',
-      meals: [
-        {
-          id: 'meal_sáng',
-          name: 'Bữa sáng chính (07:30)',
-          dishes: [
-            {
-              id: 'dish_sáng_t4',
-              name: 'Mì tươi thịt bằm dẻo ngon',
-              ingredients: [
-                { ingredientId: 'tinh_bot_22', quantityPerChild: 80 }, // Mì sợi tươi
-                { ingredientId: 'thit_thuy_san_22', quantityPerChild: 25 }, // Thịt vai heo băm nhỏ
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 }
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_trưa',
-          name: 'Bữa trưa dinh dưỡng (10:30)',
-          dishes: [
-            {
-              id: 'dish_cơm_t4',
-              name: 'Cơm tẻ dẻo mầm non',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 70 }
-              ]
-            },
-            {
-              id: 'dish_mặn_t4',
-              name: 'Cá sốt cà chua thơm lành',
-              ingredients: [
-                { ingredientId: 'thit_thuy_san_10', quantityPerChild: 40 }, // Cá rô phi phi lê
-                { ingredientId: 'rau_cu_qua_07', quantityPerChild: 20 }, // Cà chua
-                { ingredientId: 'chat_beo_01', quantityPerChild: 4 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 }
-              ]
-            },
-            {
-              id: 'dish_canh_t4',
-              name: 'Canh bắp cải tép khô dồi dào canxi',
-              ingredients: [
-                { ingredientId: 'rau_cu_qua_11', quantityPerChild: 40 }, // Cải bắp
-                { ingredientId: 'thit_thuy_san_26', quantityPerChild: 8 }, // Tép khô
-                { ingredientId: 'chat_beo_01', quantityPerChild: 2 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            },
-            {
-              id: 'dish_tráng_miệng_t4',
-              name: 'Tráng miệng: Táo đỏ ngọt',
-              ingredients: [
-                { ingredientId: 'trai_cay_07', quantityPerChild: 65 } // Táo Gala ngọt giòn
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_xế_chiều',
-          name: 'Bữa phụ xế chiều (14:30)',
-          dishes: [
-            {
-              id: 'dish_xế_t4',
-              name: 'Cháo cá quả lọc xương gừng hành',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 45 },
-                { ingredientId: 'thit_thuy_san_08', quantityPerChild: 20 }, // Cá quả phi lê
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_07', quantityPerChild: 2 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'sample_t5',
-      name: 'Thực đơn Mẫu giáo - Thứ Năm (Hủ tiếu & Trứng chiên mồng tơi)',
-      ageGroup: 'mau_giao_3_6',
-      childrenCount: 50,
-      budgetPerChild: 30000,
-      updatedAt: '2026-07-13',
-      meals: [
-        {
-          id: 'meal_sáng',
-          name: 'Bữa sáng chính (07:30)',
-          dishes: [
-            {
-              id: 'dish_sáng_t5',
-              name: 'Hủ tiếu thịt bằm miền Nam',
-              ingredients: [
-                { ingredientId: 'tinh_bot_23', quantityPerChild: 45 }, // Hủ tiếu khô nấu mềm
-                { ingredientId: 'thit_thuy_san_22', quantityPerChild: 25 }, // Thịt vai heo băm
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 }
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_trưa',
-          name: 'Bữa trưa dinh dưỡng (10:30)',
-          dishes: [
-            {
-              id: 'dish_cơm_t5',
-              name: 'Cơm tẻ dẻo mầm non',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 70 }
-              ]
-            },
-            {
-              id: 'dish_mặn_t5',
-              name: 'Trứng chiên hành thơm vàng rụm',
-              ingredients: [
-                { ingredientId: 'sua_trung_02', quantityPerChild: 45 },
-                { ingredientId: 'chat_beo_01', quantityPerChild: 4 },
-                { ingredientId: 'gia_vi_07', quantityPerChild: 2 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 }
-              ]
-            },
-            {
-              id: 'dish_canh_t5',
-              name: 'Canh rau mồng tơi thịt gà',
-              ingredients: [
-                { ingredientId: 'rau_cu_qua_10', quantityPerChild: 40 }, // Rau mồng tơi ta
-                { ingredientId: 'thit_thuy_san_06', quantityPerChild: 15 }, // Thịt gà nạc
-                { ingredientId: 'chat_beo_01', quantityPerChild: 2 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            },
-            {
-              id: 'dish_tráng_miệng_t5',
-              name: 'Tráng miệng: Xoài chín cát chu',
-              ingredients: [
-                { ingredientId: 'trai_cay_06', quantityPerChild: 60 } // Xoài chín ngọt
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_xế_chiều',
-          name: 'Bữa phụ xế chiều (14:30)',
-          dishes: [
-            {
-              id: 'dish_xế_t5',
-              name: 'Nui thịt gà nạc sốt cà nhạt',
-              ingredients: [
-                { ingredientId: 'tinh_bot_19', quantityPerChild: 40 }, // Nui búp bê
-                { ingredientId: 'thit_thuy_san_06', quantityPerChild: 20 }, // Gà nạc xé
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'sample_t6',
-      name: 'Thực đơn Mẫu giáo - Thứ Sáu (Phở thịt & Thịt kho bí đao)',
-      ageGroup: 'mau_giao_3_6',
-      childrenCount: 50,
-      budgetPerChild: 30000,
-      updatedAt: '2026-07-13',
-      meals: [
-        {
-          id: 'meal_sáng',
-          name: 'Bữa sáng chính (07:30)',
-          dishes: [
-            {
-              id: 'dish_sáng_t6',
-              name: 'Phở thịt bằm thơm lừng',
-              ingredients: [
-                { ingredientId: 'tinh_bot_08', quantityPerChild: 90 }, // Bánh phở tươi
-                { ingredientId: 'thit_thuy_san_22', quantityPerChild: 25 },
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 }
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_trưa',
-          name: 'Bữa trưa dinh dưỡng (10:30)',
-          dishes: [
-            {
-              id: 'dish_cơm_t6',
-              name: 'Cơm tẻ dẻo mầm non',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 70 }
-              ]
-            },
-            {
-              id: 'dish_mặn_t6',
-              name: 'Thịt kho bí đao thanh mát',
-              ingredients: [
-                { ingredientId: 'thit_thuy_san_02', quantityPerChild: 35 }, // Thịt heo nửa nạc mỡ
-                { ingredientId: 'rau_cu_qua_06', quantityPerChild: 25 }, // Bí xanh (bí đao)
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 2 }
-              ]
-            },
-            {
-              id: 'dish_canh_t6',
-              name: 'Canh khoai mỡ tép khô đậm đà',
-              ingredients: [
-                { ingredientId: 'rau_cu_qua_28', quantityPerChild: 45 }, // Khoai mỡ tím ta
-                { ingredientId: 'thit_thuy_san_26', quantityPerChild: 8 }, // Tép khô
-                { ingredientId: 'chat_beo_01', quantityPerChild: 2 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            },
-            {
-              id: 'dish_tráng_miệng_t6',
-              name: 'Tráng miệng: Lê đường giòn ngọt',
-              ingredients: [
-                { ingredientId: 'trai_cay_13', quantityPerChild: 65 } // Lê chín giòn ngọt
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_xế_chiều',
-          name: 'Bữa phụ xế chiều (14:30)',
-          dishes: [
-            {
-              id: 'dish_xế_t6',
-              name: 'Cháo thịt bò băm nhỏ dồi dào sắt',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 45 },
-                { ingredientId: 'thit_thuy_san_04', quantityPerChild: 20 }, // Thịt bò băm
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'sample_t7',
-      name: 'Thực đơn Mẫu giáo - Thứ Bảy (Bún thịt & Tàu hủ chiên củ dền)',
-      ageGroup: 'mau_giao_3_6',
-      childrenCount: 50,
-      budgetPerChild: 30000,
-      updatedAt: '2026-07-13',
-      meals: [
-        {
-          id: 'meal_sáng',
-          name: 'Bữa sáng chính (07:30)',
-          dishes: [
-            {
-              id: 'dish_sáng_t7',
-              name: 'Bún thịt bằm mầm non cuối tuần',
-              ingredients: [
-                { ingredientId: 'tinh_bot_07', quantityPerChild: 90 }, // Bún tươi
-                { ingredientId: 'thit_thuy_san_22', quantityPerChild: 25 },
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 }
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_trưa',
-          name: 'Bữa trưa dinh dưỡng (10:30)',
-          dishes: [
-            {
-              id: 'dish_cơm_t7',
-              name: 'Cơm tẻ dẻo mầm non',
-              ingredients: [
-                { ingredientId: 'tinh_bot_01', quantityPerChild: 70 }
-              ]
-            },
-            {
-              id: 'dish_mặn_t7',
-              name: 'Tàu hủ chiên vàng giòn rụm',
-              ingredients: [
-                { ingredientId: 'thit_thuy_san_20', quantityPerChild: 45 }, // Đậu phụ / Tàu hủ
-                { ingredientId: 'chat_beo_01', quantityPerChild: 4 }, // Dầu chiên
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            },
-            {
-              id: 'dish_canh_t7',
-              name: 'Canh củ dền thịt gà ta đỏ mọng',
-              ingredients: [
-                { ingredientId: 'rau_cu_qua_29', quantityPerChild: 40 }, // Củ dền đỏ ngọt
-                { ingredientId: 'thit_thuy_san_06', quantityPerChild: 15 }, // Thịt ức gà
-                { ingredientId: 'chat_beo_01', quantityPerChild: 2 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            },
-            {
-              id: 'dish_tráng_miệng_t7',
-              name: 'Tráng miệng: Chuối tiêu ngọt',
-              ingredients: [
-                { ingredientId: 'trai_cay_01', quantityPerChild: 60 }
-              ]
-            }
-          ]
-        },
-        {
-          id: 'meal_xế_chiều',
-          name: 'Bữa phụ xế chiều (14:30)',
-          dishes: [
-            {
-              id: 'dish_xế_t7',
-              name: 'Miến thịt gà xé nhỏ thơm ngon',
-              ingredients: [
-                { ingredientId: 'tinh_bot_24', quantityPerChild: 40 }, // Miến dong ta
-                { ingredientId: 'thit_thuy_san_06', quantityPerChild: 20 }, // Gà nạc xé
-                { ingredientId: 'chat_beo_01', quantityPerChild: 3 },
-                { ingredientId: 'gia_vi_03', quantityPerChild: 1 }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ];
 
   // Tính toán dữ liệu dinh dưỡng hiện tại
   const nutrition = useMemo(() => {
@@ -597,13 +104,20 @@ export default function MenuPlanner({ ingredients, activeMealState }: MenuPlanne
     return checkAgainstStandard(nutrition, standard);
   }, [nutrition, standard]);
 
-  // Mở thực đơn mẫu
-  const handleLoadSample = (sample: SavedMenu) => {
-    // Giữ vững thiết lập mặc định theo yêu cầu của người dùng
-    setAgeGroup('lop_ghep');
-    setChildrenCount(57);
-    setBudgetPerChild(35000);
-    setMeals(JSON.parse(JSON.stringify(sample.meals))); // Deep copy
+  // 6 thực đơn đề cử (chuẩn dinh dưỡng) lấy trực tiếp từ savedMenus theo đúng thứ tự Thứ 2 -> Thứ 7
+  const recommendedMenus = useMemo(() => {
+    const daysOrder = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+    return daysOrder
+      .map(day => savedMenus.find(m => m.name === day))
+      .filter((m): m is SavedMenu => !!m);
+  }, [savedMenus]);
+
+  // Mở thực đơn đã lưu
+  const handleLoadSaved = (saved: SavedMenu) => {
+    setAgeGroup(saved.ageGroup || 'lop_ghep');
+    setChildrenCount(saved.childrenCount || 57);
+    setBudgetPerChild(saved.budgetPerChild || 35000);
+    setMeals(JSON.parse(JSON.stringify(saved.meals))); // Deep copy
     setShowLoadModal(false);
   };
 
@@ -833,7 +347,7 @@ export default function MenuPlanner({ ingredients, activeMealState }: MenuPlanne
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-natural-light border border-natural-border hover:bg-natural-hover text-natural-text rounded-xl text-xs font-semibold cursor-pointer transition-colors"
               >
                 <FolderOpen className="w-3.5 h-3.5" />
-                <span>Thực đơn mẫu / Đã lưu</span>
+                <span>Thực đơn đã lưu</span>
               </button>
               
               <button
@@ -1352,78 +866,111 @@ export default function MenuPlanner({ ingredients, activeMealState }: MenuPlanne
         </div>
       </div>
 
-      {/* MODAL: CHỌN MỞ THỰC ĐƠN MẪU / ĐÃ LƯU */}
+      {/* MODAL: CHỌN MỞ THỰC ĐƠN ĐÃ LƯU */}
       {showLoadModal && (
         <div className="fixed inset-0 bg-natural-dark/40 backdrop-blur-xs flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl w-full max-w-xl max-h-[80vh] flex flex-col overflow-hidden border border-natural-border">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-xl max-h-[85vh] flex flex-col overflow-hidden border border-natural-border">
             <div className="px-6 py-4 bg-natural-panel border-b border-natural-border flex justify-between items-center">
               <div>
-                <h3 className="text-sm font-bold text-natural-dark">Thực đơn học đường</h3>
-                <p className="text-xs text-natural-muted">Mở thực đơn mẫu có sẵn hoặc tải thực đơn đã lưu của bạn</p>
+                <h3 className="text-sm font-bold text-natural-dark">Thực đơn đã lưu</h3>
+                <p className="text-xs text-natural-muted">Mở và quản lý danh sách thực đơn do bạn đã lưu</p>
               </div>
               <button onClick={() => setShowLoadModal(false)} className="text-natural-muted hover:text-natural-dark cursor-pointer p-1 rounded-lg">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-5 flex-grow bg-natural-light/40">
-              {/* Sample section */}
-              <div className="space-y-2">
-                <h4 className="text-xs font-extrabold text-natural-muted uppercase tracking-wider">Thực đơn đề cử (Chuẩn dinh dưỡng)</h4>
-                <div className="space-y-2">
-                  {SAMPLE_MENUS.map((sample) => (
-                    <button
-                      key={sample.id}
-                      onClick={() => handleLoadSample(sample)}
-                      className="w-full text-left bg-white border border-natural-border hover:border-natural-primary p-4 rounded-xl flex justify-between items-center group cursor-pointer transition-all hover:shadow-xs"
-                    >
-                      <div className="space-y-1">
-                        <span className="text-xs font-bold text-natural-dark group-hover:text-natural-primary">{sample.name}</span>
-                        <div className="flex gap-4 text-[10px] text-natural-muted font-semibold">
-                          <span>👶 {sample.ageGroup === 'nha_tre_12_36' ? 'Nhà trẻ' : 'Mẫu giáo'}</span>
-                          <span>👥 {sample.childrenCount} trẻ</span>
-                          <span>💰 {sample.budgetPerChild.toLocaleString()}đ/trẻ</span>
-                        </div>
-                      </div>
-                      <Sparkles className="w-4 h-4 text-natural-primary group-hover:scale-110 transition-transform" />
-                    </button>
-                  ))}
-                </div>
-              </div>
+            <div className="p-6 overflow-y-auto space-y-4 flex-grow bg-natural-light/40">
+              {/* THỰC ĐƠN ĐỀ CỬ (CHUẨN DINH DƯỠNG) */}
+              {recommendedMenus.length > 0 && (
+                <div className="space-y-2 pb-4 border-b border-natural-border">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-extrabold text-natural-primary uppercase tracking-wider flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-natural-accent-orange" />
+                      THỰC ĐƠN ĐỀ CỬ (CHUẨN DINH DƯỠNG)
+                    </h4>
+                    <span className="text-[10px] font-bold bg-natural-primary/10 text-natural-primary px-2 py-0.5 rounded-full">
+                      {recommendedMenus.length} ngày (Thứ 2 - Thứ 7)
+                    </span>
+                  </div>
 
-              {/* Saved section */}
-              <div className="space-y-2">
-                <h4 className="text-xs font-extrabold text-natural-muted uppercase tracking-wider">Thực đơn do bạn đã lưu</h4>
-                {savedMenus.length === 0 ? (
-                  <p className="text-xs text-natural-muted italic py-4 text-center">Chưa có thực đơn tự lập nào được lưu trữ</p>
-                ) : (
                   <div className="space-y-2">
-                    {savedMenus.map((menu) => (
+                    {recommendedMenus.map((menu) => (
                       <div
-                        key={menu.id}
-                        onClick={() => handleLoadSample(menu)}
-                        className="w-full text-left bg-white border border-natural-border hover:border-natural-primary p-4 rounded-xl flex justify-between items-center group cursor-pointer transition-all hover:shadow-xs"
+                        key={`rec_${menu.id}`}
+                        onClick={() => handleLoadSaved(menu)}
+                        className="w-full text-left bg-gradient-to-r from-natural-primary/5 via-white to-white border border-natural-primary/30 hover:border-natural-primary p-3.5 rounded-xl flex justify-between items-center group cursor-pointer transition-all hover:shadow-xs"
                       >
                         <div className="space-y-1">
-                          <span className="text-xs font-bold text-natural-dark group-hover:text-natural-primary">{menu.name}</span>
-                          <div className="flex gap-4 text-[10px] text-natural-muted font-semibold">
-                            <span>👶 {menu.ageGroup === 'nha_tre_12_36' ? 'Nhà trẻ' : 'Mẫu giáo'}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold text-natural-dark group-hover:text-natural-primary">
+                              {menu.name}
+                            </span>
+                            <span className="text-[9px] bg-natural-accent-green/15 text-natural-accent-green font-bold px-1.5 py-0.5 rounded">
+                              Chuẩn dinh dưỡng
+                            </span>
+                          </div>
+                          <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-natural-muted font-semibold">
+                            <span>👶 {menu.ageGroup === 'nha_tre_12_36' ? 'Nhà trẻ' : (menu.ageGroup === 'mau_giao_3_6' ? 'Mẫu giáo' : 'Lớp ghép')}</span>
                             <span>👥 {menu.childrenCount} trẻ</span>
                             <span>💰 {menu.budgetPerChild.toLocaleString()}đ/trẻ</span>
                             <span>📅 {menu.updatedAt}</span>
                           </div>
                         </div>
-                        <button
-                          onClick={(e) => handleDeleteSaved(menu.id, e)}
-                          className="p-1.5 bg-natural-light hover:bg-natural-accent-orange/15 text-natural-muted hover:text-natural-accent-orange rounded-lg transition-colors cursor-pointer"
-                        >
-                          <Trash2 className="w-3.5 h-3.5" />
-                        </button>
+                        <span className="text-[11px] font-bold text-natural-primary group-hover:underline flex items-center gap-1 shrink-0 ml-2">
+                          Chọn dùng <ArrowRightLeft className="w-3 h-3" />
+                        </span>
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+
+              <div className="flex justify-between items-center">
+                <h4 className="text-xs font-extrabold text-natural-muted uppercase tracking-wider">
+                  Thực đơn do bạn đã lưu ({savedMenus.length})
+                </h4>
+                {cloudSyncing && (
+                  <span className="text-[10px] text-natural-primary flex items-center gap-1 font-semibold">
+                    <RefreshCw className="w-3 h-3 animate-spin" /> Đang đồng bộ...
+                  </span>
                 )}
               </div>
+
+              {savedMenus.length === 0 ? (
+                <div className="py-8 text-center bg-white border border-dashed border-natural-border rounded-xl p-6 space-y-2">
+                  <FolderOpen className="w-8 h-8 text-natural-muted/40 mx-auto" />
+                  <p className="text-xs text-natural-muted font-medium">Chưa có thực đơn nào được lưu trữ</p>
+                  <p className="text-[11px] text-natural-muted/80">Bạn có thể tạo thực đơn và nhấn nút <b>"Lưu thực đơn này"</b> để lưu trữ và mở lại bất cứ lúc nào.</p>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {savedMenus.map((menu) => (
+                    <div
+                      key={menu.id}
+                      onClick={() => handleLoadSaved(menu)}
+                      className="w-full text-left bg-white border border-natural-border hover:border-natural-primary p-4 rounded-xl flex justify-between items-center group cursor-pointer transition-all hover:shadow-xs"
+                    >
+                      <div className="space-y-1">
+                        <span className="text-xs font-bold text-natural-dark group-hover:text-natural-primary">{menu.name}</span>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-natural-muted font-semibold">
+                          <span>👶 {menu.ageGroup === 'nha_tre_12_36' ? 'Nhà trẻ' : 'Mẫu giáo'}</span>
+                          <span>👥 {menu.childrenCount} trẻ</span>
+                          <span>💰 {menu.budgetPerChild.toLocaleString()}đ/trẻ</span>
+                          <span>📅 {menu.updatedAt}</span>
+                        </div>
+                      </div>
+                      <button
+                        onClick={(e) => handleDeleteSaved(menu.id, e)}
+                        className="p-1.5 bg-natural-light hover:bg-natural-accent-orange/15 text-natural-muted hover:text-natural-accent-orange rounded-lg transition-colors cursor-pointer"
+                        title="Xóa thực đơn này"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

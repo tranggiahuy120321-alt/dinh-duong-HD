@@ -71,6 +71,55 @@ export async function getMenusFromFirebase(): Promise<SavedMenu[]> {
   }
 }
 
+// === TIỆN ÍCH QUẢN LÝ THỰC ĐƠN MẪU (CHUẨN DINH DƯỠNG) ===
+
+const SAMPLE_MENUS_COLLECTION = 'sample_menus';
+
+/**
+ * Lưu thực đơn mẫu lên Google Firestore
+ */
+export async function saveSampleMenuToFirebase(menu: SavedMenu): Promise<void> {
+  try {
+    const docRef = doc(db, SAMPLE_MENUS_COLLECTION, menu.id);
+    await setDoc(docRef, menu);
+    console.log(`Lưu thực đơn mẫu ${menu.name} lên Firestore thành công`);
+  } catch (err) {
+    console.error('Lỗi khi lưu thực đơn mẫu lên Firestore:', err);
+    throw err;
+  }
+}
+
+/**
+ * Xóa thực đơn mẫu khỏi Google Firestore
+ */
+export async function deleteSampleMenuFromFirebase(menuId: string): Promise<void> {
+  try {
+    const docRef = doc(db, SAMPLE_MENUS_COLLECTION, menuId);
+    await deleteDoc(docRef);
+    console.log(`Xóa thực đơn mẫu ${menuId} khỏi Firestore thành công`);
+  } catch (err) {
+    console.error('Lỗi khi xóa thực đơn mẫu khỏi Firestore:', err);
+    throw err;
+  }
+}
+
+/**
+ * Tải danh sách thực đơn mẫu từ Google Firestore
+ */
+export async function getSampleMenusFromFirebase(): Promise<SavedMenu[]> {
+  try {
+    const querySnapshot = await getDocs(collection(db, SAMPLE_MENUS_COLLECTION));
+    const menus: SavedMenu[] = [];
+    querySnapshot.forEach((doc) => {
+      menus.push(doc.data() as SavedMenu);
+    });
+    return menus;
+  } catch (err) {
+    console.error('Lỗi khi tải thực đơn mẫu từ Firestore:', err);
+    return [];
+  }
+}
+
 // === TIỆN ÍCH QUẢN LÝ CƠ SỞ DỮ LIỆU THỰC PHẨM ===
 
 const INGREDIENTS_DOC = 'app_data/ingredients_catalog';

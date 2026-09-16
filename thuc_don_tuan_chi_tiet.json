@@ -1,0 +1,1346 @@
+[
+  {
+    "name": "Thứ 2",
+    "ageGroup": "lop_ghep",
+    "childrenCount": 57,
+    "budgetPerChild": 35000,
+    "meals": [
+      {
+        "mealName": "Bữa sáng chính (07:30)",
+        "dishes": [
+          {
+            "dishName": "Bánh lọt thịt bằm",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_21",
+                "ingredientName": "Bánh lọt tươi",
+                "quantityPerChildGram": 80,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_22",
+                "ingredientName": "Thịt vai heo băm nhỏ",
+                "quantityPerChildGram": 25,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_23",
+                "ingredientName": "Su hào củ mọng nước",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789384528938",
+                "ingredientName": "Sữa uống lên men có đường Yakult 65ml",
+                "quantityPerChildGram": 1000,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa trưa dinh dưỡng (10:30)",
+        "dishes": [
+          {
+            "dishName": "Cơm tẻ dẻo mầm non",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 70,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Trứng chiên hành hoa",
+            "ingredients": [
+              {
+                "ingredientId": "sua_trung_02",
+                "ingredientName": "Trứng gà (quả vỏ)",
+                "quantityPerChildGram": 60,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 4,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_07",
+                "ingredientName": "Hành hoa ta (Hành lá tươi)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Canh rau cải ngọt tép khô",
+            "ingredients": [
+              {
+                "ingredientId": "rau_cu_qua_03",
+                "ingredientName": "Rau cải ngọt vườn",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789383832717",
+                "ingredientName": "Tôm khô",
+                "quantityPerChildGram": 12,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Tráng miệng: Chuối chín",
+            "ingredients": [
+              {
+                "ingredientId": "trai_cay_01",
+                "ingredientName": "Chuối tiêu chín ngọt",
+                "quantityPerChildGram": 60,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa phụ xế chiều (14:30)",
+        "dishes": [
+          {
+            "dishName": "Cháo thịt heo nạc thơm ngon",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 45,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_01",
+                "ingredientName": "Thịt lợn nạc loin",
+                "quantityPerChildGram": 30,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_23",
+                "ingredientName": "Su hào củ mọng nước",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thứ 3",
+    "ageGroup": "lop_ghep",
+    "childrenCount": 57,
+    "budgetPerChild": 35000,
+    "meals": [
+      {
+        "mealName": "Bữa sáng chính (07:30)",
+        "dishes": [
+          {
+            "dishName": "Bún thịt bằm ấm nóng",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_07",
+                "ingredientName": "Bún tươi",
+                "quantityPerChildGram": 90,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_22",
+                "ingredientName": "Thịt vai heo băm nhỏ",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789384528938",
+                "ingredientName": "Sữa uống lên men có đường Yakult 65ml",
+                "quantityPerChildGram": 1000,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa trưa dinh dưỡng (10:30)",
+        "dishes": [
+          {
+            "dishName": "Cơm tẻ dẻo mầm non",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 70,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Thịt kho su su tàu hủ",
+            "ingredients": [
+              {
+                "ingredientId": "thit_thuy_san_02",
+                "ingredientName": "Thịt lợn nửa nạc nửa mỡ (Nạc vai)",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_20",
+                "ingredientName": "Đậu phụ (Tính chất tương đương đạm thực vật)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Canh bí đỏ thịt gà",
+            "ingredients": [
+              {
+                "ingredientId": "rau_cu_qua_05",
+                "ingredientName": "Bí đỏ ta (Bí ngô già gọt vỏ)",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_06",
+                "ingredientName": "Thịt ức gà (không xương, không da)",
+                "quantityPerChildGram": 12,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Tráng miệng: Dưa hấu ngọt",
+            "ingredients": [
+              {
+                "ingredientId": "trai_cay_04",
+                "ingredientName": "Dưa hấu đỏ ngọt nước",
+                "quantityPerChildGram": 70,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa phụ xế chiều (14:30)",
+        "dishes": [
+          {
+            "dishName": "Mì gói thịt bằm",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_10",
+                "ingredientName": "Mì tôm (ăn liền)",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_22",
+                "ingredientName": "Thịt vai heo băm nhỏ",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_03",
+                "ingredientName": "Rau cải ngọt vườn",
+                "quantityPerChildGram": 15,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thứ 4",
+    "ageGroup": "lop_ghep",
+    "childrenCount": 57,
+    "budgetPerChild": 35000,
+    "meals": [
+      {
+        "mealName": "Bữa sáng chính (07:30)",
+        "dishes": [
+          {
+            "dishName": "Mì tươi thịt bằm dẻo ngon",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_22",
+                "ingredientName": "Mì sợi tươi",
+                "quantityPerChildGram": 80,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_22",
+                "ingredientName": "Thịt vai heo băm nhỏ",
+                "quantityPerChildGram": 25,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789384528938",
+                "ingredientName": "Sữa uống lên men có đường Yakult 65ml",
+                "quantityPerChildGram": 1000,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa trưa dinh dưỡng (10:30)",
+        "dishes": [
+          {
+            "dishName": "Cơm tẻ dẻo mầm non",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 70,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Cá sốt cà chua",
+            "ingredients": [
+              {
+                "ingredientId": "rau_cu_qua_07",
+                "ingredientName": "Cà chua chín mọng vỏ đỏ",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 4,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789382789071",
+                "ingredientName": "Cá hộp Imperial",
+                "quantityPerChildGram": 50,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Canh bắp cải tép khô dồi dào canxi",
+            "ingredients": [
+              {
+                "ingredientId": "rau_cu_qua_11",
+                "ingredientName": "Cải bắp trắng muốt",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789383832717",
+                "ingredientName": "Tôm khô",
+                "quantityPerChildGram": 10,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Tráng miệng: Táo đỏ ngọt",
+            "ingredients": [
+              {
+                "ingredientId": "trai_cay_07",
+                "ingredientName": "Táo Gala tươi ngọt",
+                "quantityPerChildGram": 65,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa phụ xế chiều (14:30)",
+        "dishes": [
+          {
+            "dishName": "Cháo cá",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 45,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_07",
+                "ingredientName": "Hành hoa ta (Hành lá tươi)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_09",
+                "ingredientName": "Cá hồi Na-uy phi lê",
+                "quantityPerChildGram": 13,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_15",
+                "ingredientName": "Ngô ngọt (Bắp hạt)",
+                "quantityPerChildGram": 10,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thứ 5",
+    "ageGroup": "lop_ghep",
+    "childrenCount": 57,
+    "budgetPerChild": 35000,
+    "meals": [
+      {
+        "mealName": "Bữa sáng chính (07:30)",
+        "dishes": [
+          {
+            "dishName": "Hủ tiếu thịt bằm miền Nam",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_23",
+                "ingredientName": "Hủ tiếu khô",
+                "quantityPerChildGram": 45,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_22",
+                "ingredientName": "Thịt vai heo băm nhỏ",
+                "quantityPerChildGram": 25,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789384528938",
+                "ingredientName": "Sữa uống lên men có đường Yakult 65ml",
+                "quantityPerChildGram": 1000,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa trưa dinh dưỡng (10:30)",
+        "dishes": [
+          {
+            "dishName": "Cơm tẻ dẻo mầm non",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 70,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Bò kho khoai tây",
+            "ingredients": [
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 4,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_07",
+                "ingredientName": "Hành hoa ta (Hành lá tươi)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_04",
+                "ingredientName": "Thịt bò tái/băm (loại thường)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_04",
+                "ingredientName": "Khoai tây",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Canh rau mồng tơi thịt gà",
+            "ingredients": [
+              {
+                "ingredientId": "rau_cu_qua_10",
+                "ingredientName": "Rau mồng tơi ta",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_06",
+                "ingredientName": "Thịt ức gà (không xương, không da)",
+                "quantityPerChildGram": 12,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Tráng miệng: Xoài chín cát chu",
+            "ingredients": [
+              {
+                "ingredientId": "trai_cay_06",
+                "ingredientName": "Xoài chín ngọt giống Cát Chu",
+                "quantityPerChildGram": 60,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa phụ xế chiều (14:30)",
+        "dishes": [
+          {
+            "dishName": "Nui thịt gà nạc sốt cà nhạt",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_19",
+                "ingredientName": "Nui ống Semolina cho bé",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_06",
+                "ingredientName": "Thịt ức gà (không xương, không da)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thứ 6",
+    "ageGroup": "lop_ghep",
+    "childrenCount": 57,
+    "budgetPerChild": 35000,
+    "meals": [
+      {
+        "mealName": "Bữa sáng chính (07:30)",
+        "dishes": [
+          {
+            "dishName": "Phở thịt bằm thơm lừng",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_08",
+                "ingredientName": "Bánh phở tươi",
+                "quantityPerChildGram": 50,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_22",
+                "ingredientName": "Thịt vai heo băm nhỏ",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789384528938",
+                "ingredientName": "Sữa uống lên men có đường Yakult 65ml",
+                "quantityPerChildGram": 1000,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa trưa dinh dưỡng (10:30)",
+        "dishes": [
+          {
+            "dishName": "Cơm tẻ dẻo mầm non",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 70,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Thịt kho bí đao thanh mát",
+            "ingredients": [
+              {
+                "ingredientId": "thit_thuy_san_02",
+                "ingredientName": "Thịt lợn nửa nạc nửa mỡ (Nạc vai)",
+                "quantityPerChildGram": 30,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_06",
+                "ingredientName": "Bí xanh dại (Bí đao bầu)",
+                "quantityPerChildGram": 25,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Canh khoai mỡ tép khô đậm đà",
+            "ingredients": [
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789386576097",
+                "ingredientName": "Khoai mỡ(khoai lang tím)",
+                "quantityPerChildGram": 28,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789383832717",
+                "ingredientName": "Tôm khô",
+                "quantityPerChildGram": 5,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Tráng miệng: Lê đường giòn ngọt",
+            "ingredients": [
+              {
+                "ingredientId": "trai_cay_13",
+                "ingredientName": "Lê chín nhập khẩu giòn ngọt",
+                "quantityPerChildGram": 65,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa phụ xế chiều (14:30)",
+        "dishes": [
+          {
+            "dishName": "Cháo thịt bò băm nhỏ dồi dào sắt",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 45,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "chat_beo_01",
+                "ingredientName": "Dầu ăn tinh luyện (Tường An/Neptune)",
+                "quantityPerChildGram": 3,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_12",
+                "ingredientName": "Tôm lớp (Tôm biển bóc vỏ)",
+                "quantityPerChildGram": 10,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_05",
+                "ingredientName": "Bí đỏ ta (Bí ngô già gọt vỏ)",
+                "quantityPerChildGram": 10,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thứ 7",
+    "ageGroup": "lop_ghep",
+    "childrenCount": 57,
+    "budgetPerChild": 35000,
+    "meals": [
+      {
+        "mealName": "Bữa sáng chính (07:30)",
+        "dishes": [
+          {
+            "dishName": "Bún thịt bằm mầm non cuối tuần",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_07",
+                "ingredientName": "Bún tươi",
+                "quantityPerChildGram": 50,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_22",
+                "ingredientName": "Thịt vai heo băm nhỏ",
+                "quantityPerChildGram": 25,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1.5,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789384528938",
+                "ingredientName": "Sữa uống lên men có đường Yakult 65ml",
+                "quantityPerChildGram": 1000,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa trưa dinh dưỡng (10:30)",
+        "dishes": [
+          {
+            "dishName": "Cơm tẻ dẻo mầm non",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_01",
+                "ingredientName": "Gạo tẻ máy",
+                "quantityPerChildGram": 70,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Thịt kho trứng cút",
+            "ingredients": [
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_22",
+                "ingredientName": "Thịt vai heo băm nhỏ",
+                "quantityPerChildGram": 30,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "sua_trung_03",
+                "ingredientName": "Trứng chim cút (vỏ)",
+                "quantityPerChildGram": 30,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Canh củ dền thịt gà ta đỏ mọng",
+            "ingredients": [
+              {
+                "ingredientId": "thit_thuy_san_06",
+                "ingredientName": "Thịt ức gà (không xương, không da)",
+                "quantityPerChildGram": 10,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "custom_1789387659028",
+                "ingredientName": "Củ dền",
+                "quantityPerChildGram": 30,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          },
+          {
+            "dishName": "Tráng miệng: Chuối tiêu ngọt",
+            "ingredients": [
+              {
+                "ingredientId": "trai_cay_02",
+                "ingredientName": "Đu đủ chín lòng đỏ",
+                "quantityPerChildGram": 30,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mealName": "Bữa phụ xế chiều (14:30)",
+        "dishes": [
+          {
+            "dishName": "Miến thịt gà xé nhỏ thơm ngon",
+            "ingredients": [
+              {
+                "ingredientId": "tinh_bot_24",
+                "ingredientName": "Miến dong ta",
+                "quantityPerChildGram": 40,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "thit_thuy_san_06",
+                "ingredientName": "Thịt ức gà (không xương, không da)",
+                "quantityPerChildGram": 25,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_03",
+                "ingredientName": "Nước mắm cá cơm Nam Ngư sạch",
+                "quantityPerChildGram": 1,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_17",
+                "ingredientName": "Su su quả non ngọt",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "rau_cu_qua_04",
+                "ingredientName": "Cà rốt ta (quả đỏ củ)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "tinh_bot_06",
+                "ingredientName": "Sắn củ (Khoai mì)",
+                "quantityPerChildGram": 20,
+                "unit": "gam"
+              },
+              {
+                "ingredientId": "gia_vi_11",
+                "ingredientName": "Tỏi củ cô đơn bóc vỏ khô",
+                "quantityPerChildGram": 2,
+                "unit": "gam"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

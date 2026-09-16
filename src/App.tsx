@@ -15,60 +15,10 @@ import IngredientManager from './components/IngredientManager';
 import ReportViewer from './components/ReportViewer';
 import InstructionDoc from './components/InstructionDoc';
 import { getIngredientsFromFirebase, saveIngredientsToFirebase } from './lib/firebase';
+import { DEFAULT_SAMPLE_MENUS } from './data/sampleMenus';
 
-// Thực đơn mặc định nạp sẵn khi khởi chạy (Thực đơn mẫu 1)
-const DEFAULT_MEALS: Meal[] = [
-  {
-    id: 'meal_sáng',
-    name: 'Bữa sáng chính (07:30)',
-    dishes: [
-      {
-        id: 'dish_cháo_heo',
-        name: 'Cháo thịt heo nạc rau ngót ta',
-        ingredients: [
-          { ingredientId: 'tinh_bot_01', quantityPerChild: 45 }, // Gạo tẻ máy
-          { ingredientId: 'thit_thuy_san_01', quantityPerChild: 25 }, // Thịt lợn nạc
-          { ingredientId: 'rau_cu_qua_01', quantityPerChild: 15 }, // Rau ngót tươi ta
-          { ingredientId: 'chat_beo_01', quantityPerChild: 3 }, // Dầu ăn
-          { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 }, // Nước mắm
-        ]
-      }
-    ]
-  },
-  {
-    id: 'meal_trưa',
-    name: 'Bữa trưa dinh dưỡng (10:30)',
-    dishes: [
-      {
-        id: 'dish_súp_bắp_gà',
-        name: 'Cháo gà hầm bí đỏ hạt sen thơm dẻo',
-        ingredients: [
-          { ingredientId: 'tinh_bot_01', quantityPerChild: 50 }, // Gạo tẻ máy
-          { ingredientId: 'thit_thuy_san_06', quantityPerChild: 25 }, // Ức gà phi lê
-          { ingredientId: 'rau_cu_qua_05', quantityPerChild: 25 }, // Bí đỏ ta
-          { ingredientId: 'rau_cu_qua_25', quantityPerChild: 12 }, // Hạt sen tươi bóc vỏ
-          { ingredientId: 'chat_beo_01', quantityPerChild: 3 }, // Dầu ăn
-          { ingredientId: 'gia_vi_03', quantityPerChild: 1.5 }, // Nước mắm
-        ]
-      }
-    ]
-  },
-  {
-    id: 'meal_xế_chiều',
-    name: 'Bữa phụ xế chiều (14:30)',
-    dishes: [
-      {
-        id: 'dish_sữa_tươi',
-        name: 'Sữa tươi tiệt trùng cùng Bơ sáp dầm',
-        ingredients: [
-          { ingredientId: 'sua_trung_01', quantityPerChild: 120 }, // Sữa tươi tiệt trùng
-          { ingredientId: 'trai_cay_15', quantityPerChild: 30 }, // Bơ sáp ngậy
-          { ingredientId: 'gia_vi_01', quantityPerChild: 4 }, // Đường cát
-        ]
-      }
-    ]
-  }
-];
+// Thực đơn mặc định nạp sẵn khi khởi chạy (Thực đơn mẫu Thứ 2)
+const DEFAULT_MEALS: Meal[] = DEFAULT_SAMPLE_MENUS[0]?.meals || [];
 
 export default function App() {
   // 1. Trạng thái cơ sở dữ liệu thực phẩm (Đồng bộ hai chiều với Google Cloud Firestore và LocalStorage làm dự phòng)
