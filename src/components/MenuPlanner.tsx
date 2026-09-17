@@ -12,6 +12,7 @@ import {
 import { Meal, Dish, MenuIngredient, Ingredient, AgeGroup, SavedMenu } from '../types';
 import { calculateDailyRation, checkAgainstStandard } from '../utils/calculator';
 import { NUTRITION_STANDARDS } from '../data/standards';
+import { RECOMMENDED_MENUS } from '../data/recommendedMenus';
 import IngredientSelector from './IngredientSelector';
 import { 
   saveMenuToFirebase, 
@@ -104,13 +105,8 @@ export default function MenuPlanner({ ingredients, activeMealState }: MenuPlanne
     return checkAgainstStandard(nutrition, standard);
   }, [nutrition, standard]);
 
-  // 6 thực đơn đề cử (chuẩn dinh dưỡng) lấy trực tiếp từ savedMenus theo đúng thứ tự Thứ 2 -> Thứ 7
-  const recommendedMenus = useMemo(() => {
-    const daysOrder = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
-    return daysOrder
-      .map(day => savedMenus.find(m => m.name === day))
-      .filter((m): m is SavedMenu => !!m);
-  }, [savedMenus]);
+  // 6 thực đơn đề cử (chuẩn dinh dưỡng) cố định theo tuần, độc lập hoàn toàn với danh sách thực đơn do người dùng lưu/xóa
+  const recommendedMenus = RECOMMENDED_MENUS;
 
   // Mở thực đơn đã lưu
   const handleLoadSaved = (saved: SavedMenu) => {

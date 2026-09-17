@@ -4,7 +4,7 @@ import { SavedMenu } from "../types";
  * Danh sách 6 Thực đơn Đề cử (Chuẩn Dinh Dưỡng Học Đường) cố định cho cả tuần.
  * Nguồn dữ liệu độc lập, không bị ảnh hưởng hay phụ thuộc vào danh sách thực đơn do người dùng lưu/xóa.
  */
-export const DEFAULT_SAMPLE_MENUS: SavedMenu[] = [
+export const RECOMMENDED_MENUS: SavedMenu[] = [
   {
     "budgetPerChild": 35000,
     "updatedAt": "15/9/2026",
